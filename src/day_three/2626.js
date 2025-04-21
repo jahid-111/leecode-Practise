@@ -30,3 +30,14 @@ const reduce = function (nums, fn, init) {
 
 const result = reduce(array, calculationFn, 0);
 console.log(result); // 150
+
+const nums = [1, 20, 34, 90];
+
+const reducer = nums.reduce((acc, curr, index, arr) => {
+  console.log(
+    ` Storage Arr acc: ${acc}, current Value: ${curr}, index: ${index}, array: [${arr}]`
+  );
+
+  return acc + curr;
+}, 0);
+console.log(reducer);
