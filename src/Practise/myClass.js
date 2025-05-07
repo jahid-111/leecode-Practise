@@ -26,5 +26,31 @@ const updateUsr = new User(
 );
 const changeUserPassword = new User(registration.Password);
 
-console.log(updateUsr.changeUserName("Mohd. Jahidul Islam"));
-console.log(changeUserPassword.changeUserName("#########"));
+// console.log(updateUsr.changeUserName("Mohd. Jahidul Islam"));
+// console.log(changeUserPassword.changeUserName("#########"));
+
+function Students(name, age, roll) {
+  this.name = name;
+  this.age = age;
+  this.roll = roll;
+}
+
+Students.prototype.encryptRoll = function () {
+  return `${this.roll}-encrypted Roll`;
+};
+Students.prototype.changeStudentName = function (newName) {
+  return `${this.name} changed to ${newName}`;
+};
+
+Students.prototype.updateStudentRoll = function (newRoll) {
+  return `${this.roll} to change ${newRoll}`;
+};
+
+const student = new Students("Jahid", 23, 101);
+const student2 = new Students("Jahid", 23, 9000);
+
+console.log(student.encryptRoll());
+console.log(student.changeStudentName("Mohd. Jahidul Islam"));
+const updateRoll = student.updateStudentRoll(32);
+console.log(updateRoll);
+console.log(student2.updateStudentRoll(100));
